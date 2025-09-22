@@ -32,7 +32,7 @@ export async function getMovies() {
 
 export async function searchMovies(query) {
     if(!query) return []
-    const searchUrl = `https://api.themoviedb.org/3/search/movie?query=${query}&language=es-ES`
+    const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${query}&language=es-ES`
     try {
         const res = await fetch(searchUrl, options)
         if(!res.ok) throw new Error("Error al buscar película")
