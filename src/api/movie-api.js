@@ -1,6 +1,7 @@
 const API_URL = import.meta.env.VITE_URL
 const API_IMAGE = import.meta.env.VITE_GET_IMAGE
 const API_TOKEN = import.meta.env.VITE_TOKEN
+const API_KEY = import.meta.env.VITE_API_KEY
 
 const options = {
     method: "GET",
@@ -12,7 +13,7 @@ const options = {
 
 export async function getMovies() {
     try {
-        const res = await fetch(API_URL, options)
+        const res = await fetch(`${API_URL}?api_key=${API_KEY}&language=es-ES&page=1`)
         if(!res.ok) throw new Error("Error al cargar películas")
         const data = await res.json()
         return data.results
