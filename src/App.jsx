@@ -39,7 +39,6 @@ return(
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                         <div className="bg-primary rounded-full p-2">
-
                         </div>
                         <div>
                             <h1 className="text-2xl font-bold text-foreground text-white">Cuevamasiva</h1>

@@ -18,7 +18,7 @@ const Card = ({movie})=>{
         className="relative "
         onMouseEnter={mouseEnter}
         onMouseLeave={mouseLeave}>
-            <div className="backdrop-blur-sm hover:shadow-2xl shadow-white/30 transition-all duration-300 hover:scale-90 cursor-pointer">
+            <div className="backdrop-blur-sm hover:shadow-2xl shadow-white/30 transition-all duration-300 hover:scale-90 rounded-2xl cursor-pointer">
                 <img 
                 src={getPoster(movie.poster_path)} 
                 alt={movie.title} 
@@ -32,7 +32,7 @@ const Card = ({movie})=>{
 
             {/* overlay con informacion */}
             {isHovered && (
-                <div className="absolute top-[100px] left-[50%] w-[500px] ml-4 z-50 bg-black/70 backdrop-blur-md rounded-lg p-6 shadow-2xl animate-in fade-in duration-700">
+                <div className="absolute top-[100px] left-[50%] w-[500px] ml-4 z-50 bg-black/70 backdrop-blur-md rounded-2xl p-6 shadow-2xl animate-in fade-in duration-700">
                     <div className="text-white">
                         <h3 className="text-2xl font-bold mb-4 text-white">
                             {movie.title}

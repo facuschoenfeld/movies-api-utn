@@ -13,18 +13,25 @@ const options = {
 
 export async function getMovies() {
     try {
-        const res = await fetch(`${API_URL}?api_key=${API_KEY}&language=es-ES&page=1`,{
-            method: 'GET',
-            headers:{
-                accept: 'application/json',
-                Authorization: `Bearer ${API_TOKEN}`
-            },
-        })
+        const res = await fetch(`${API_URL}?api_key=${API_KEY}&language=es-ES&page=1`, options)
         if(!res.ok) throw new Error("Error al cargar películas")
         const data = await res.json()
         return data.results
     } 
     catch(err) {
+        console.error(err)
+        return []
+    }
+}
+
+export async function getGenres(){
+    try{
+        const res = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=es-ES`, options)
+        if(!res.ok) throw new Error("Error al cargar los generos")
+        const data = await res.json()
+        return data.results
+    }
+    catch(err){
         console.error(err)
         return []
     }
